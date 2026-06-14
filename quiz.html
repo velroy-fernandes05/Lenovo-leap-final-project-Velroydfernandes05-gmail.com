@@ -7,42 +7,95 @@
 
 <body>
 
-<!-- SAME NAVBAR -->
+<nav class="navbar">
+
+    <div class="logo">
+        AI Study Assistant
+    </div>
+
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="chat.html">AI Chat</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+
+        <li class="dropdown">
+            <a href="#">More ▼</a>
+
+            <ul class="dropdown-content">
+                <li><a href="about.html">About Project</a></li>
+                <li><a href="future.html">Future Scope</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</nav>
 
 <div class="container">
 
-<div class="card">
+    <div class="card">
 
-<h1>Quiz</h1>
+        <h1>📝 AI Knowledge Quiz</h1>
 
-<p>What does AI stand for?</p>
+        <h3>Question 1</h3>
 
-<input type="radio" name="q1"> Artificial Intelligence
-<br>
+        <p>What does AI stand for?</p>
 
-<input type="radio" name="q1"> Artificial Internet
-<br>
+        <input type="radio" name="q1" value="wrong">
+        Artificial Internet
 
-<input type="radio" name="q1"> Advanced Interface
+        <br><br>
 
-<br><br>
+        <input type="radio" name="q1" value="correct">
+        Artificial Intelligence
 
-<button onclick="checkAnswer()">
-Submit
-</button>
+        <br><br>
 
-<p id="result"></p>
+        <input type="radio" name="q1" value="wrong">
+        Advanced Interface
+
+        <br><br>
+
+        <button onclick="checkAnswer()">
+            Submit Answer
+        </button>
+
+        <br><br>
+
+        <div id="result"></div>
+
+    </div>
 
 </div>
 
-</div>
+<footer>
+<p>© 2025 AI Study Assistant | Lenovo LEAP Capstone Project</p>
+</footer>
 
 <script>
 
 function checkAnswer(){
 
-document.getElementById("result").innerHTML =
-"✅ Correct Answer: Artificial Intelligence";
+    let answer =
+    document.querySelector('input[name="q1"]:checked');
+
+    if(answer == null){
+        document.getElementById("result").innerHTML =
+        "⚠ Please select an answer.";
+        return;
+    }
+
+    if(answer.value == "correct"){
+        document.getElementById("result").innerHTML =
+        "✅ Correct! AI stands for Artificial Intelligence.";
+    }
+
+    else{
+        document.getElementById("result").innerHTML =
+        "❌ Incorrect. Correct Answer: Artificial Intelligence.";
+    }
 
 }
 
