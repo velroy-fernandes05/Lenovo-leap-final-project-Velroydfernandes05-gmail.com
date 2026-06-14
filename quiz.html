@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- SAME NAVBAR -->
+
+<div class="container">
+
+<div class="card">
+
+<h1>Quiz</h1>
+
+<p>What does AI stand for?</p>
+
+<input type="radio" name="q1"> Artificial Intelligence
+<br>
+
+<input type="radio" name="q1"> Artificial Internet
+<br>
+
+<input type="radio" name="q1"> Advanced Interface
+
+<br><br>
+
+<button onclick="checkAnswer()">
+Submit
+</button>
+
+<p id="result"></p>
+
+</div>
+
+</div>
+
+<script>
+
+function checkAnswer(){
+
+document.getElementById("result").innerHTML =
+"✅ Correct Answer: Artificial Intelligence";
+
+}
+
+</script>
+
+</body>
+</html>
